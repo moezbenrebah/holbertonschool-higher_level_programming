@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
-* check_cycle - check if the singly list contain a cycle or not
-* @list: pointer to a singly list
+*check_cycle - check if the singly list contain a cycle or not
+*@list: pointer to a singly list
 *
 *Return: 1 if successed, otherwise 0
 */
