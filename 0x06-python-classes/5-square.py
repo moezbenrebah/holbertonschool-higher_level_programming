@@ -4,11 +4,21 @@
 
 class Square:
     """Defines a square."""
+
     def __init__(self, size=0):
+         """Constructor.
+        Args:
+            size: Length of a side of the square.
+        """
         self.__size = size
 
     @property
     def size(self):
+        """Property for the length of a side of this square.
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
+        """
         return self.__size
 
     @size.setter
@@ -23,6 +33,7 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
+        """Prints this square."""
         for x in range(self.size):
             for y in range(self.size):
                 print("#", end='\n' if y is self.size - 1 and x != y else "")
