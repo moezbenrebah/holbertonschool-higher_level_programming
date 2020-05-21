@@ -1,6 +1,24 @@
 #!/usr/bin/python3
+
+
+
 class Node:
+    """Represents a node in a singly linked list
+
+    Attributes:
+        __data (int): data stored inside the node
+        __next_node (Node): next node in the linked list
+    """
+
     def __init__(self, data, next_node=None):
+        """Initializes the node
+        Args:
+            data (int): data stored inside the node
+            next_node (Node): next node in the linked list
+        Returns:
+            None
+        """
+
         self.data = data
         self.next_node = next_node
 
