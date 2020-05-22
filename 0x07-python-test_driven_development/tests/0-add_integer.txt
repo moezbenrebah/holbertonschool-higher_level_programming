@@ -34,3 +34,7 @@ Check: int with float:
 Check: both float:
     >>> add_integer(4.2, 9.1)
     13
+
+Check: boolean
+    >>>add_integer(True, 2)
+    TypeError: a must be an integer 
