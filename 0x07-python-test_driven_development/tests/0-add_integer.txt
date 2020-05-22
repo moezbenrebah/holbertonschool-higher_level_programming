@@ -1,0 +1,36 @@
+Importing the function from the module:
+        >>> add_integer = __import__("0-add_integer").add_integer
+
+Checks: module docstring:
+    >>> x = __import__("0-add_integer").__doc__
+    >>> len(x) > 1
+    True
+
+Check: function docstring:
+    >>> f = __import__("0-add_integer").add_integer.__doc__
+    >>> len(f) > 1
+    True
+
+Check: regular addition:
+    >>> add_integer(4, 4)
+    8
+
+Check: negative with positive
+    >>> add_integer(-5, 2)
+    -3
+
+Check: positive with negative
+    >>> add_integer(3, -1)
+    2
+
+check: float with int:
+    >>> add_integer(2.1, 4)
+    6
+
+Check: int with float:
+    >>> add_integer(4, 3.6)
+    7
+
+Check: both float:
+    >>> add_integer(4.2, 9.1)
+    13
