@@ -11,9 +11,6 @@ Check: function docstring:
     >>> len(b) > 1
     True
 
-Check: basic print 0:
-    >>> print_square(0)
-
 Check: basic print 1:
     >>> print_square(1)
     #
