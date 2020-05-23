@@ -15,6 +15,24 @@ Check: Regular tests passed:
     >>> add_integer(4, 98)
     102
 
+Check: passing one int arg:
+    >>> add_integer(2)
+    100
+
+Check: check the default arg:
+    >>> add_integer(0)
+    98
+
+Check: 2 big integers:
+    >>> add_integer(9999999998, 9999999999)
+    19999999997
+
+Check: add infinity:
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
 Check: negative with positive
     >>> add_integer(-5, 2)
     -3
@@ -47,10 +65,27 @@ Check: passed None as b:
     ...
     TypeError: b must be an integer
 
-Check: passing 0 as a:
-    >>> add_integer(0, 3)
-    3
+Check: passing float overflow:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
 
-Check: passing 0 as b and a:
-    >>> add_integer(0, 0)
-    0
+Check: first arg invalid:
+    >>> add_integer("foo", 0)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Check: both args invalid:
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Check: second arg invalid:
+    >>> add_integer(123123, [])
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
