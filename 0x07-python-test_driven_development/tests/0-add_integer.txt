@@ -89,7 +89,7 @@ Check: second arg invalid:
     ...
     TypeError: b must be an integer
 
-Check: passing NaN test:
+Check: passing NaN:
     >>> >>> add_integer(0, float('nan'))
     Traceback (most recent call last):
     ...
