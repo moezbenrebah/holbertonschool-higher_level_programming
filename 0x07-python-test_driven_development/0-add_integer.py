@@ -8,12 +8,15 @@ The 0-add_integer module function: add_integer(a, b).
 
 def add_integer(a, b=98):
     """
-    add_integer: adds 2 integers
+    add_integer: adds 2 integers.
     Args:
-        a (int, float): first number
-        b (int, float): second number
+        a (int, float): first number.
+        b (int, float): second number.
     Returns:
-        int
+        integer.
+    Raises:
+        TypeError: a must be an integer.
+        TypeError: b must be an integer.
     """
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
