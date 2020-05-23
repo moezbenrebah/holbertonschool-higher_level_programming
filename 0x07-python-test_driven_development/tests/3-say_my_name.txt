@@ -16,3 +16,37 @@ Check: passing int as first_name:
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
+
+Check: passing int as last_name:
+    >>> say_my_name("first_name", 22)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Check: regular check:
+    >>> say_my_name("Moez", "Ben Rebah")
+    My name is Moez Ben Rebah
+
+Check: passing first_name empty:
+    >>> say_my_name("", "Ben Rebah")
+    My name is  Ben Rebah
+
+Check: passing last_name empty:
+    >>> say_my_name("Moez", "")
+    My name is Moez 
+
+check: both names empty:
+    >>> say_my_name("", "")
+    My name is 
+
+Check: passing not str two names:
+    >>> say_my_name(91, 98)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Check: missing 2 args:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
