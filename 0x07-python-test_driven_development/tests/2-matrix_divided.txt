@@ -49,28 +49,42 @@ Check: mix of ints and floats:
 	[[1, 2.4, 3], [4.1, 5, 6.8]]
 
 Check: div as float:
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> matrix_divided(matrix, 4.5)
-	[[0.22, 0.44, 0.67], [0.89, 1.11, 1.33]]
-	>>> matrix
-	[[1, 2, 3], [4, 5, 6]]
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 4.5)
+    [[0.22, 0.44, 0.67], [0.89, 1.11, 1.33]]
+    >>> matrix
+    [[1, 2, 3], [4, 5, 6]]
 
 Check: negative numerators:
-	>>> matrix = [[-1, -2, -3], [-4, -5, -6]]
-	>>> matrix_divided(matrix, 3)
-	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
-	>>> matrix
-        [[-1, -2, -3], [-4, -5, -6]]
-
-Check: passing string:
-    >>> matrinx = [[3, “9”], [15, 3]]
+    >>> matrix = [[-1, -2, -3], [-4, -5, -6]]
     >>> matrix_divided(matrix, 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (array of arrays of integers/floats)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+    >>> matrix
+    [[-1, -2, -3], [-4, -5, -6]]
 
-Check: passing empty matrix:
-    >>> matrix_divided([[]], 3)
+Check: passing empty matrix more:
+    >>> matrix_divided([[], [], []], 2)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+check: division by non number:
+    >>> matrix_divided([[2]], "foo")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Check: missing 1 arg:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Check: division by nan:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('nan'))
+    [[nan, nan, nan], [nan, nan, nan]]
+
+Check: division by inf:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
