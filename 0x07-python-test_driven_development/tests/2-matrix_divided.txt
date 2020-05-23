@@ -88,3 +88,8 @@ Check: division by inf:
     >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('inf'))
     [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
+Check: matrix with different rows
+    >>> matrix_divided([[2, 4, 8], [1, 3]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
