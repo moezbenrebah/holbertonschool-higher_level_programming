@@ -28,3 +28,7 @@ Check: passing non-string type:
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
+
+Check: take one string:
+    >>> text_indentation("Hello")
+    Hello
