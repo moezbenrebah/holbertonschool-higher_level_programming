@@ -1,5 +1,5 @@
 Importing the function from the module:
-        >>> add_integer = __import__("0-add_integer").add_integer
+    >>> add_integer = __import__("0-add_integer").add_integer
 
 Checks: module docstring:
     >>> x = __import__("0-add_integer").__doc__
@@ -11,9 +11,9 @@ Check: function docstring:
     >>> len(f) > 1
     True
 
-Check: regular addition:
-    >>> add_integer(4, 4)
-    8
+Check: Regular tests passed:
+    >>> add_integer(4, 98)
+    102
 
 Check: negative with positive
     >>> add_integer(-5, 2)
@@ -35,6 +35,22 @@ Check: both float:
     >>> add_integer(4.2, 9.1)
     13
 
-Check: boolean
-    >>>add_integer(True, 2)
-    TypeError: a must be an integer 
+Check: passed Boolean as b:
+    >>> add_integer(2, True)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Check: passed None as b:
+    >>> add_integer(2, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Check: passing 0 as a:
+    >>> add_integer(0, 3)
+    3
+
+Check: passing 0 as b and a:
+    >>> add_integer(0, 0)
+    0
