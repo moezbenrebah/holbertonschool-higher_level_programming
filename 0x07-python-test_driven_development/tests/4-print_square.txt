@@ -11,6 +11,10 @@ Check: function docstring:
     >>> len(b) > 1
     True
 
+Check: basic print 0:
+    >>> print_square(0)
+    <BLANKLINE>
+
 Check: basic print 1:
     >>> print_square(1)
     #
