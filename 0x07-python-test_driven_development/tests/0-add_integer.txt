@@ -77,6 +77,12 @@ Check: first arg invalid:
     ...
     TypeError: a must be an integer
 
+Check: second arg invalid:
+    >>> add_integer(0, "foo")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
 Check: both args invalid:
     >>> add_integer(None, None)
     Traceback (most recent call last):
