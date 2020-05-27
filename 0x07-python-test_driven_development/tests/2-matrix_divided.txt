@@ -75,6 +75,12 @@ check: division by non number:
     TypeError: div must be a number
 
 Check: missing 1 arg:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Check: missing 2 arg:
     >>> matrix_divided()
     Traceback (most recent call last):
     ...
