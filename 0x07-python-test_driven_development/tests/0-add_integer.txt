@@ -81,7 +81,7 @@ Check: second arg invalid:
     >>> add_integer(0, "foo")
     Traceback (most recent call last):
     ...
-    TypeError: a must be an integer
+    TypeError: b must be an integer
 
 Check: both args invalid:
     >>> add_integer(None, None)
@@ -106,3 +106,9 @@ Check: passing None:
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+Check: passing No argument:
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
