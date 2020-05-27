@@ -35,9 +35,15 @@ Check: passing last_name empty:
     >>> say_my_name("Moez", "")
     My name is Moez 
 
+Check: passing last_name empty:
+    >>> say_my_name("Moez", [1, 2, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
 check: both names empty:
     >>> say_my_name("", "")
-    My name is 
+    My name is  
 
 Check: passing not str two names:
     >>> say_my_name(91, 98)
