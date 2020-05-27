@@ -104,4 +104,4 @@ Check: matrix not integer
     >>> matrix_divided([[3, '9', 5], [15, 3, 5]], 3)
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix (array of arrays of integers/floats)
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
