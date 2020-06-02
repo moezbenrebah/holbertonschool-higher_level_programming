@@ -2,6 +2,7 @@
 """Module for MyInt class."""
 
 
+
 class MyInt(int):
     def __equal__(self, x):
         """override and inverte equal."""
