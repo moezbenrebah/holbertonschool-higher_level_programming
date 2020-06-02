@@ -1,0 +1,13 @@
+Importing the function from the module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Check : passing correct Class Type:
+    >>> BG = BaseGeometry()
+    >>> type(bg) == BaseGeometry
+    True
+
+Check: area method regular test:
+    >>> BG.area()
+    Traceback (most recent call last):
+    ...
+    TypeError: area() takes 1 positional argument but 2 were given
