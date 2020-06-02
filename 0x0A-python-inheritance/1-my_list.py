@@ -3,6 +3,12 @@
 
 
 class MyList(list):
+    """
+    Represents MyList class
+
+    Attributes:
+        None
+    """
 
     def __init__(self):
         """
