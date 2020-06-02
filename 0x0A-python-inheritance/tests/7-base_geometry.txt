@@ -6,8 +6,33 @@ Check : passing correct Class Type:
     >>> type(bg) == BaseGeometry
     True
 
+area() instance method
+*******************************
+
 Check: area method regular test:
     >>> BG.area()
     Traceback (most recent call last):
     ...
     TypeError: area() takes 1 positional argument but 2 were given
+
+Check: passing a class call with no arguments:
+    >>> BG.__class__.area()
+    Traceback (most recent call last):
+    ...
+    TypeError: area() missing 1 required positional argument: 'self'
+
+
+integer_validator() instance method
+**************************************
+
+Check: passing a class call with no argument:
+    >>> BG.__class__.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
+Check: passing 0 arguments:
+    >>> BG.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
