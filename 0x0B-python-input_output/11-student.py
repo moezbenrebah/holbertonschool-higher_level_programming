@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Module for student class.
-"""
+"""Module for student class."""
 import json
 
 
