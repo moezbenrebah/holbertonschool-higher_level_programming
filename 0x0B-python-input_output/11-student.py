@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""Module for student class."""
-import json
+"""Module for Studen class"""
 
 
 class Student:
-    """class for student."""
+    """Class for student"""
     def __init__(self, first_name, last_name, age):
-        """initialization."""
+        """Constructor."""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """retrieves a dictionary."""
-        return self.__dict__
+        """retrieves dictionary"""
+        return self.__dict__.copy()
