@@ -14,7 +14,7 @@ def append_after(filename="", search_string="", new_string=""):
     Returns:
         None.
     """
-    with open(filename, 'w', coding="utf-8") as f:
+    with open(filename, 'r+', coding="utf-8") as f:
         word = ""
         for lines in f:
             word += lines
