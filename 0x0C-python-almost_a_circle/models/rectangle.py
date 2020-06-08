@@ -84,10 +84,9 @@ class Rectangle(Base):
 
     def display(self):
         """Displays the rectangle in output"""
-        for i in range(self.height):
-            for j in range(self.width):
-                print('#', end="")
-            print()
+        print(("\n" * self.__y) +
+              "\n".join(((" " * self.__x) + ("#" * self.__width))
+                        for _ in range(self.__height)))
 
     def __str__(self):
         """Returns an update about the rectangle"""
@@ -95,4 +94,30 @@ class Rectangle(Base):
             format(type(self).__name__, self.id, self.x, self.y,
                    self.width, self.height)
 
-    def display(self, *args, **kwargs):
+    def update(self, *args, **kwargs):
+        """Update the class Rectangle by adding the public method"""
+        if len(args) > 1:
+            for a, arg in enumerate(args):
+                if a == 0:
+                    self.id = arg
+                if a == 1:
+                    self.width = arg
+                if a == 2:
+                    self.height = arg
+                if a == 3:
+                    self.x = arg
+                if a == 4:
+                    self.y = arg
+
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
