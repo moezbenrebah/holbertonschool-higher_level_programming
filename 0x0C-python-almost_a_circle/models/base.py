@@ -29,7 +29,7 @@ class Base:
             (str): Json represantation
         """
         if list_dictionaries is None:
-            list_dictionaries = []
+            list_dictionaries = "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -56,6 +56,6 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Represent json string"""
-        if json_string is None:
-            json_string = []
+        if json_string is None or json_string is "":
+            json_string = "[]"
         return json.loads(json_string)
