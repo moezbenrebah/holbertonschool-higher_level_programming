@@ -99,18 +99,17 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Update the class Rectangle by adding the public method"""
-        if len(args) > 1:
-            for a, arg in enumerate(args):
-                if a == 0:
-                    self.id = arg
-                if a == 1:
-                    self.width = arg
-                if a == 2:
-                    self.height = arg
-                if a == 3:
-                    self.x = arg
-                if a == 4:
-                    self.y = arg
+        for a, arg in enumerate(args):
+            if a == 0:
+                self.id = arg
+            if a == 1:
+                self.width = arg
+            if a == 2:
+                self.height = arg
+            if a == 3:
+                self.x = arg
+            if a == 4:
+                self.y = arg
 
         else:
             for key, value in kwargs.items():
