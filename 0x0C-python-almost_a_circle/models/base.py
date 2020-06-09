@@ -1,5 +1,7 @@
 #!usr/bin/python3
-"""Defines a Base module."""
+"""
+Defines a Base module.
+"""
 import json
 
 
