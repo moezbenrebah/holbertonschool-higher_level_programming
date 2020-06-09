@@ -20,15 +20,15 @@ class Square(Rectangle):
     @property
     def size(self):
         """get the x coordinate of the Rectangle."""
-        return self.__size
+        return self.__width
 
     @size.setter
     def size(self, value):
         """set the x coordinate of the Rectangle."""
         if type(value) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
         self.__height = value
 
