@@ -34,7 +34,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """update list of arguments."""
-        if args is "" and if len(args) > 1:
+        if args is "":
             for a, arg in enumerate(args):
                 if a == 0:
                     self.id = arg
