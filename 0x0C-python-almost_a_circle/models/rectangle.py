@@ -28,11 +28,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Set/get the width of the Rectangle."""
+        """get the width of the Rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """set the width of the Rectangle."""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -54,11 +55,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Set/get the x coordinate of the Rectangle."""
+        """get the x coordinate of the Rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """set the x coordinate of the Rectangle."""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -67,11 +69,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Set/get the y coordinate of the Rectangle."""
+        """get the y coordinate of the Rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """set the x coordinate of the Rectangle."""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -121,3 +124,17 @@ class Rectangle(Base):
                     self.x = value
                 if key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """retrun dictonary respersantaion of rectangle
+        Args:
+            None
+        Returns:
+            the dictionary representation of a rectangle.
+        """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y}
