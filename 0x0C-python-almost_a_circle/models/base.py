@@ -50,8 +50,8 @@ class Base:
             for i in list_objs:
                 li.append(cls.to_dictionary(i))
 
-            with open(filename, 'w') as f:
-                f.write(cls.to_json_string(li))
+        with open(filename, 'w') as f:
+            f.write(cls.to_json_string(li))
 
     @staticmethod
     def from_json_string(json_string):
