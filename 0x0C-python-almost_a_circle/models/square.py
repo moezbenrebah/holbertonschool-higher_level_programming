@@ -34,15 +34,15 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """update list of arguments."""
-            for a, arg in enumerate(args):
-                if a == 0:
-                    self.id = arg
-                if a == 1:
-                    self.size = arg
-                if a == 2:
-                    self.x = arg
-                if a == 3:
-                    self.y = arg
+        for a, arg in enumerate(args):
+            if a == 0:
+                self.id = arg
+            if a == 1:
+                self.size = arg
+            if a == 2:
+                self.x = arg
+            if a == 3:
+                self.y = arg
 
         else:
             for key, value in kwargs.items():
