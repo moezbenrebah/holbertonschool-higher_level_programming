@@ -39,3 +39,27 @@ class TestBase(unittest.TestCase):
         d = [{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]
         self.assertAlmostEqual(print(json_dictionary), print(d))
         self.assertAlmostEqual(print(type(json_dictionary)),print("<class 'str'>"))
+
+    def test_json_to_file(self):
+        """update tests."""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        d = [{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(print(file.read()), print(d))
+
+    def test_from_json_string(self):
+        """tests"""
+        list_input = [
+        {'id': 89, 'width': 10, 'height': 4}, 
+        {'id': 7, 'width': 1, 'height': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        l = "[<class 'list'>] [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}]"
+        self.assertEqual(print(l), print("[{}] {}".format(type(list_output), list_output)))
+        json_list_input = Rectangle.to_json_string(None)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(print("[]"), print("[{}] {}".format(type(list_output), list_output)))
+
+
