@@ -1,3 +1,3 @@
 -- a script to remove a database
 
-DROP DATABASE hbtn_0c_0;
+DROP IF EXISTS DATABASE hbtn_0c_0;
