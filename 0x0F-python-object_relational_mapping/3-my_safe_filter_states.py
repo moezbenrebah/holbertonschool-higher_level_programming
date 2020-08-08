@@ -2,24 +2,29 @@
 """
 a script that takes in arguments and displays all values in the states
 table of hbtn_0e_0_usa where name matches the argument.
-But this time, write one that is safe from MySQL injections!
 """
 
 import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    argument = sys.argv[4]
-    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                           passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
+    username = sys.argv[1]
+    password = sys.argv[2]
+    dbname = sys.argv[3]
+    name = sys.argv[4]
+    conn = MySQLdb.connect(host="localhost",
+                           port=3306,
+                           user=username,
+                           passwd=password,
+                           db=dbname,
+                           charset="utf8")
     cur = conn.cursor()
-    cur.execute("""SELECT cities.name
-                FROM cities JOIN states
-                ON cities.state_id = states.id
-                WHERE states.name = %s
-                ORDER BY cities.id ASC;""", (argument,))
+    cur.execute("SELECT cities.name " +
+                "FROM cities " +
+                "INNER JOIN states " +
+                "ON cities.state_id = states.id " +
+                "WHERE states.name = %s ORDER BY cities.id ASC;", (name,))
     rows = cur.fetchall()
     print(", ".join([row[0] for row in rows]))
-
     cur.close()
-    db.close()
+    conn.close()
