@@ -10,9 +10,9 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-class State(BASE):
+class State(Base):
     """a class to create a table in a db"""
 
     __tablename__ = 'states'
-    id = Column(Integer, UNIQUE, AUTO GENERATED, NOT NULL, primary_key=True)
-    name = Column(String(128), NOT NULL)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), nullable=False)
