@@ -19,12 +19,11 @@ if __name__ == '__main__':
                            db=dbname,
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT cities.name " +
-                "FROM cities " +
-                "INNER JOIN states " +
-                "ON cities.state_id = states.id " +
-                "WHERE states.name = %s ORDER BY cities.id ASC;", (name,))
+    cur.execute("SELECT * FROM states " +
+                "WHERE states.name = %s " +
+                "ORDER BY states.id", (sys.argv[4], ))
     rows = cur.fetchall()
-    print(", ".join([row[0] for row in rows]))
+    for row in rows:
+        print(row)
     cur.close()
     conn.close()
