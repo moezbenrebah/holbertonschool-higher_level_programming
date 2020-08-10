@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cur = conn.cursor()
     cur.execute("SELECT * FROM states " +
                 "WHERE states.name = %s " +
-                "ORDER BY states.id", (sys.argv[4], ))
+                "ORDER BY states.id", (sys.argv[4]))
     rows = cur.fetchall()
     for row in rows:
         print(row)
