@@ -9,9 +9,9 @@ def find_peak(list_of_integers):
         return None
     if len(p) is 1:
         return p[0]
+    if len(p) == 0:
+        return None
     for i in range(len(p) - 1):
-        if len(p) == 0:
-            return None
         if p[i] >= p[i - 1] and p[i] >= p[i + 1]:
             return p[i]
         if p[i - 1] > p[i - 2] and p[i - 1] > p[i]:
