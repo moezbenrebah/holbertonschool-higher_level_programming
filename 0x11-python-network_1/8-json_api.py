@@ -8,18 +8,16 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-
     if len(argv) == 1:
-        let = ""
+	let = ""
     else:
-        let = argv[1]
+	 let = argv[1]
     payload = {"q": let}
 
     r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
-        r_dict = r.json()
-        id, name = r_dict.get('id'), r_dict.get('name')
-        if len(r_dict) == 0 or not id or not name:
+        response = r.json()
+        if response == {}:
             print("No result")
         else:
             print("[{}] {}".format(response.get("id"), response.get("name")))
