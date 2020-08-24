@@ -10,7 +10,7 @@ import requests
 if __name__ == "__main__":
     url = argv[1]
     try:
-        res = requests.post(url)
+        res = requests.get(url)
         print(res.text)
     except requests.RequestException as e:
         print("Error code: {}".format(e))
